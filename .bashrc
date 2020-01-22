@@ -134,6 +134,7 @@ ex ()
   fi
 }
 
+# Editor Environment
 export VISUAL="vim"
 export EDITOR="$VISUAL"
 
@@ -153,6 +154,7 @@ alias toworks='cd /mnt/data/.apps/'
 alias mount-windows='udisksctl mount --block-device /dev/sda3'
 alias mount-data='udisksctl mount --block-device /dev/sdb1'
 alias mount-data-windows='udisksctl mount --block-device /dev/sda4'
+alias mount-usb='udisksctl mount --block-device /dev/sdc1'
 
 # Node JS Environment
 export PATH=$PATH:/mnt/data/.apps/nodejs/bin
