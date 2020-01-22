@@ -1,5 +1,4 @@
 #!/bin/sh
+xrdb ~/.Xresources
+exec i3
 
-if [ -f /usr/bin/i3 ]; then
-    exec i3
-fi
