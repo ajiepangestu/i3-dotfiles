@@ -1,82 +1,86 @@
+# I3WM CONFIGURATION
+
+# [Default MOD Button]
 set $mod Mod4
 
+# [Font]
 font pango:monospace 8
-for_window [class=".*"] border pixel 0
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
+# [Window Configuration]
+for_window [class=".*"] border pixel 0
+
+# [Window Configuration] [Android emulator]
+for_window [title="Android Emulator - Pixel_API*"] floating enable
+# assign [title="Android Emulator - Pixel_API*"] 5
+
+# [Gaps]
+# gaps horizontal 2
+# gaps bottom 2
+
+# [Volume]
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Brightness
+# [Brightness]
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+# [Terminal]
 bindsym $mod+Return exec i3-sensible-terminal
 
-# network
+# [Network]
 bindsym $mod+n exec --no-startup-id networkmanager_dmenu
 
-# kill focused window
+# [Kill Focused Window]
 bindsym $mod+Shift+q kill
 
-# Custom dmenu
+# [Dmenu]
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -dmenu -lines 6  -width 400 -i -sort -p RUN'
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-# change focus
+# [Change Focus]
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
-# alternatively, you can use the cursor keys:
+# [Change Focus Alternative]
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# [Move Focused Window]
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-# alternatively, you can use the cursor keys:
+# [Move Focused Window Alternative]
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# [Split Horizontal]
 bindsym $mod+h split h
 
-# split in vertical orientation
+# [Split vertical]
 bindsym $mod+v split v
 
-# enter fullscreen mode for the focused container
+# [Fullscreen]
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# [Container Layout]
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# [Tiling / Floating]
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
@@ -159,14 +163,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# --- Startup Apps ---
-# Polybar
+# --- STARTUP APPS ---
+# [Polybar]
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# Background Wallpaper
-exec_always --no-startup-id feh --bg-fill -Z ~/Pictures/sad_kitty.jpg
-
-# Compton
+# [Background]
+exec_always --no-startup-id feh --bg-fill -Z ~/.local/share/wallpaper/sad_kitty.jpg
+# [Compton]
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
-
-# --- End of Startup Apps ---
+# [xbanish]
+exec --no-startup-id xbanish

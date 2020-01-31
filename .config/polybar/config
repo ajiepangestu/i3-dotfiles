@@ -51,7 +51,8 @@ padding-right = 2
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=8;1
+;font-0 = fixed:pixelsize=10;1
+font-0 = SF Pro Display:style=Bold:size=8;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=8;1
 
@@ -240,6 +241,15 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
+[module/netspeed]
+type = internal/network
+interface = wlp3s0
+interval=3.0
+
+accumulate-stats = true
+label-connected = %downspeed% %upspeed%
+label-disconnected =
+
 [module/eth]
 type = internal/network
 interface = eno1
@@ -381,32 +391,22 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
-
 expand-right = true
 
 format-spacing = 1
+format-underline = #76ff03
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-open = Ajie Pangestu
+label-open-foreground = ${colors.foreground}
+label-close = Cancel
+label-close-foreground = ${colors.foreground}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+menu-0-0 = Reboot
+menu-0-0-exec = /usr/bin/systemctl reboot
+menu-0-1 = Power Off
+menu-0-1-exec = /usr/bin/systemctl poweroff
 
 [settings]
 screenchange-reload = true
