@@ -56,7 +56,7 @@ font-2 = siji:pixelsize=10;1
 ; Modules
 modules-left = i3
 modules-center =
-modules-right = xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
 
 ; Tray Icon
 tray-position = right
@@ -162,23 +162,6 @@ label = %date% %time%
 ;-------------------------------------------------------------------------
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume = <ramp-volume> <label-volume>
-
-label-volume = %percentage%%
-label-volume-foreground = ${colors.foreground}
-label-muted = 
-label-muted-foreground = ${colors.foreground}
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
-ramp-volume-4 = 
-ramp-volume-5 = 
-ramp-volume-6 = 
-;-------------------------------------------------------------------------
-[module/alsa]
-type = internal/alsa
 format-volume = <ramp-volume> <label-volume>
 
 label-volume = %percentage%%
