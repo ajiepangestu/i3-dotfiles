@@ -193,6 +193,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # [Background]
 exec_always --no-startup-id feh --bg-fill -Z ~/.background/wallpaper.png
 # [Compton]
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
+#exec --no-startup-id compton --config ~/.config/compton/compton.conf
 # [xbanish]
 exec --no-startup-id xbanish
