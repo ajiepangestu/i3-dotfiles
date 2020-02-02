@@ -40,16 +40,24 @@ alias lamp-stop='sudo systemctl stop httpd  && sudo systemctl stop mysqld'
 # Sequelize
 alias reload-database='sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all'
 
-# Other Shortcut
-alias todata='cd /mnt/data/'
-alias toapps='cd /mnt/data/.apps/'
-alias toworks='cd /mnt/data/.works/'
+# Pacman
+alias remove-orphan='sudo pacman -Rns $(pacman -Qtdq)'
+
+# Systemctl
+alias systemctl-enabled='systemctl list-unit-files | grep enabled'
+alias systemctl-disabled='systemctl list-unit-files | grep disabled'
 
 # Mount Partition
 alias mount-windows='udisksctl mount --block-device /dev/sda3'
 alias mount-data='udisksctl mount --block-device /dev/sdb1'
 alias mount-data-windows='udisksctl mount --block-device /dev/sda4'
 alias mount-usb='udisksctl mount --block-device /dev/sdc1'
+
+# Other Shortcut
+alias todata='cd /mnt/data/'
+alias toapps='cd /mnt/data/.apps/'
+alias toworks='cd /mnt/data/.apps/'
+alias togithub='cd /mnt/data/github/'
 
 # Node JS Environment
 export PATH=$PATH:/mnt/data/.apps/nodejs/bin
