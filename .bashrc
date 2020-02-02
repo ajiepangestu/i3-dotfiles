@@ -43,7 +43,7 @@ alias reload-database='sequelize db:drop && sequelize db:create && sequelize db:
 # Other Shortcut
 alias todata='cd /mnt/data/'
 alias toapps='cd /mnt/data/.apps/'
-alias toworks='cd /mnt/data/.apps/'
+alias toworks='cd /mnt/data/.works/'
 
 # Mount Partition
 alias mount-windows='udisksctl mount --block-device /dev/sda3'
