@@ -1,6 +1,10 @@
 # i3-dotfiles
 i3 Configuration
 
+## Preview
+
+![alt text](https://raw.githubusercontent.com/ajiepangestu/i3-dotfiles/master/preview.png)
+
 ## Prerequisite
 
 - Auto Login TTY
