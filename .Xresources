@@ -1,11 +1,14 @@
+! [urxvt]
 URxvt.scrollBar: false
 URxvt.font: xft:Hack:Bold:size=8
 
 ! hard contrast: *background: #1d2021
-*background: #282828
+!*background: #282828
+*background: #4C4C4C
 
 ! soft contrast: *background: #32302f
-*foreground: #ebdbb2
+!*foreground: #ebdbb2
+*foreground: #dfdfdf
 
 ! Black + DarkGrey
 URxvt*color0:  #282828
@@ -39,7 +42,6 @@ URxvt*color14: #8ec07c
 URxvt*color7:  #a89984
 URxvt*color15: #ebdbb2
 
-
 URxvt.color24:  #076678
 URxvt.color66:  #427b58
 URxvt.color88:  #9d0006
@@ -71,3 +73,5 @@ URxvt.color246: #a89984
 URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
 
+! [Xterm]
+xterm*font: xft:Hack:Bold:size=8

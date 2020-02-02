@@ -1,20 +1,31 @@
-# I3WM CONFIGURATION
-
 # [Default MOD Button]
 set $mod Mod4
 
+# [Window Configuration]
+for_window [class=".*"] border pixel 2
+
 # [Font]
 font pango:monospace 8
-
-# [Window Configuration]
-for_window [class=".*"] border pixel 0
 
 # [Window Configuration] [Android emulator]
 for_window [title="Android Emulator - Pixel_API*"] floating enable
 # assign [title="Android Emulator - Pixel_API*"] 5
 
+# [Radius]
+#border_radius 4
+
+# [Themes]
+# class                 border  bground text    indicator child_border
+client.focused          #4C4C4C #EECB5A #FFFFFF #EECB5A   #EECB5A
+client.focused_inactive #4C4C4C #4C4C4C #FFFFFF #4C4C4C   #4C4C4C
+client.unfocused        #4C4C4C #4C4C4C #888888 #4C4C4C   #4C4C4C
+client.urgent           #4C4C4C #900000 #FFFFFF #900000   #900000
+client.placeholder      #4C4C4C #EECB5A #FFFFFF #EECB5A   #EECB5A
+
+client.background       #4C4C4C
+
 # [Gaps]
-# gaps horizontal 2
+gaps inner 2
 # gaps bottom 2
 
 # [Volume]
@@ -163,11 +174,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+mode "move" {
+    bindsym Up move up 20px
+    bindsym Left move left 20px
+    bindsym Down move down 20px
+    bindsym Right move right 20px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+m mode "default"
+}
+
+bindsym $mod+m focus floating; mode "move"
+
 # --- STARTUP APPS ---
 # [Polybar]
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # [Background]
-exec_always --no-startup-id feh --bg-fill -Z ~/.local/share/wallpaper/sad_kitty.jpg
+exec_always --no-startup-id feh --bg-fill -Z ~/.background/wallpaper.png
 # [Compton]
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 # [xbanish]
