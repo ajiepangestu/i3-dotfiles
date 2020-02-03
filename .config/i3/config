@@ -12,6 +12,7 @@ font pango:Hack 8
 
 # [Window Configuration] [Android emulator]
 for_window [title="Android Emulator - Pixel_API*"] floating enable
+for_window [title="Genymotion*"] floating enable
 # assign [title="Android Emulator - Pixel_API*"] 5
 
 # [Themes]
@@ -154,10 +155,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # [Resize Window]
 mode "resize" {
 	# [Use j,k,l,semicolon]
-	bindsym j resize shrink width 10 px or 10 ppt
-	bindsym k resize grow height 10 px or 10 ppt
-	bindsym l resize shrink height 10 px or 10 ppt
-	bindsym semicolon resize grow width 10 px or 10 ppt
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 	# [Use Arrow Key]
 	bindsym Left 	resize shrink width 10 px or 10 ppt
 	bindsym Down 	resize grow height 10 px or 10 ppt
@@ -171,11 +172,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "move" {
-	# [Use j,k,l,semicolon]
-	bindsym j move left 20px
-  	bindsym k move down 20px
-	bindsym l move up 20px
-  	bindsym semicolon move right 20px
+	# [Use h,j,k,l]
+	bindsym h move left 20px
+  	bindsym j move down 20px
+	bindsym k move up 20px
+  	bindsym l move right 20px
 	# [Use Arrow Key]
 	bindsym Left move left 20px
   	bindsym Down move down 20px
