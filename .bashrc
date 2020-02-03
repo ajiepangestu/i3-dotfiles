@@ -29,10 +29,6 @@ ex ()
   fi
 }
 
-# Editor Environment
-export VISUAL="vim"
-export EDITOR="$VISUAL"
-
 # LAMP Server
 alias lamp-start='sudo systemctl restart httpd && sudo systemctl restart mysqld'
 alias lamp-stop='sudo systemctl stop httpd  && sudo systemctl stop mysqld'
@@ -53,11 +49,33 @@ alias mount-data='udisksctl mount --block-device /dev/sdb1'
 alias mount-data-windows='udisksctl mount --block-device /dev/sda4'
 alias mount-usb='udisksctl mount --block-device /dev/sdc1'
 
-# Other Shortcut
+# To Directory
 alias todata='cd /mnt/data/'
 alias toapps='cd /mnt/data/.apps/'
 alias toworks='cd /mnt/data/.apps/'
 alias togithub='cd /mnt/data/github/'
+
+# Powerline Shell
+function _update_ps1() {
+    PS1=$(powerline-shell $?)
+}
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
+# Editor Environment
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+
+# Launcher for rofi-power
+#export LAUNCHER=rofi
+
+# QT5 Environment
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# Clipmenu Environment
+export CM_LAUNCHER=rofi-clipmenu
+export CM_DIR=/tmp/clipmenu
 
 # Node JS Environment
 export PATH=$PATH:/mnt/data/.apps/nodejs/bin
@@ -77,14 +95,5 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# QT5 Environment
-export QT_QPA_PLATFORMTHEME="qt5ct"
-
-# Powerline Shell
-function _update_ps1() {
-    PS1=$(powerline-shell $?)
-}
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
-
+# Local Environment
+export PATH=$PATH:$HOME/.local/bin
