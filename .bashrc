@@ -49,11 +49,14 @@ alias mount-data='udisksctl mount --block-device /dev/sdb1'
 alias mount-data-windows='udisksctl mount --block-device /dev/sda4'
 alias mount-usb='udisksctl mount --block-device /dev/sdc1'
 
-# To Directory
+# Directory
 alias todata='cd /mnt/data/'
 alias toapps='cd /mnt/data/.apps/'
-alias toworks='cd /mnt/data/.apps/'
+alias toworks='cd /mnt/data/.works'
 alias togithub='cd /mnt/data/github/'
+
+# System
+alias rm='rm -i'
 
 # Powerline Shell
 function _update_ps1() {
@@ -66,9 +69,6 @@ fi
 # Editor Environment
 export VISUAL="vim"
 export EDITOR="$VISUAL"
-
-# Launcher for rofi-power
-#export LAUNCHER=rofi
 
 # QT5 Environment
 export QT_QPA_PLATFORMTHEME="qt5ct"
