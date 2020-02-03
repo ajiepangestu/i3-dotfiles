@@ -188,8 +188,8 @@ mode "move" {
 }
 bindsym $mod+m focus floating; mode "move"
 
-# [Power Menu] Error
-#bindsym $mod+Shift+End exec --no-startup-id ~/.local/bin/rofi-power "i3-msg exit"
+# [Power Menu]
+bindsym $mod+Shift+End exec --no-startup-id ~/.local/bin/rofi-power "i3-msg exit"
 
 # [Clip Menu]
 bindsym $mod+p exec --no-startup-id clipmenu
@@ -200,8 +200,6 @@ bindsym $mod+Shift+p exec --no-startup-id rm -rf /tmp/clipmenu/*
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # [Background]
 exec_always --no-startup-id feh --bg-fill -Z ~/.background/wallpaper.png
-# [Compton]
-#exec --no-startup-id compton --config ~/.config/compton/compton.conf
 # [xbanish]
 exec --no-startup-id xbanish
 # [Clipmenu]

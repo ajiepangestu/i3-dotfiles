@@ -1,0 +1,3 @@
+LAUNCHER="rofi -width 30 -dmenu -i -p Power"
+USE_LOCKER="false"
+LOCKER="i3lock"
