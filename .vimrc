@@ -20,15 +20,18 @@ set background=dark
 " [Line Number]
 set number
 " [Tab Indent]
-set ts=2
+set expandtab
 set autoindent
 set smartindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 " ---------- END OF CONFIGURATION ---------- 
 
 
 " ---------- PLUGIN CONFIGURATION ---------- 
 " [Gruvbox]
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'soft'
 " [Airline] 
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
