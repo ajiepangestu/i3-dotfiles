@@ -50,10 +50,17 @@ alias mount-data-windows='udisksctl mount --block-device /dev/sda4'
 alias mount-usb='udisksctl mount --block-device /dev/sdc1'
 
 # Directory
-alias todata='cd /mnt/data/'
-alias toapps='cd /mnt/data/.apps/'
+alias todata='cd /mnt/data'
+alias toapps='cd /mnt/data/.apps'
 alias toworks='cd /mnt/data/.works'
-alias togithub='cd /mnt/data/github/'
+alias togithub='cd /mnt/data/github'
+alias toflutter='cd /mnt/data/flutter'
+alias toandroid='cd /mnt/data/android'
+alias tonodejs='cd /mnt/data/nodejs'
+
+# Launcher
+alias genymotion='/mnt/data/.apps/genymotion/genymotion'
+alias androidstudio="sh -c '/mnt/data/.apps/android-studio/bin/studio.sh'"
 
 # System
 alias rm='rm -i'

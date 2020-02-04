@@ -8,22 +8,21 @@ set $terminal urxvt -e
 for_window [class=".*"] border pixel 2
 
 # [Font]
-font pango:Hack 8
+font pango:Iosevka 10
 
 # [Window Configuration] [Android emulator]
 for_window [title="Android Emulator - Pixel_API*"] floating enable
 for_window [title="Genymotion*"] floating enable
-# assign [title="Android Emulator - Pixel_API*"] 5
 
 # [Themes]
 # class                 border  bground text    indicator child_border
-client.focused          #4C4C4C #EECB5A #FFFFFF #EECB5A   #EECB5A
-client.focused_inactive #4C4C4C #4C4C4C #FFFFFF #4C4C4C   #4C4C4C
-client.unfocused        #4C4C4C #4C4C4C #888888 #4C4C4C   #4C4C4C
-client.urgent           #4C4C4C #900000 #FFFFFF #900000   #900000
-client.placeholder      #4C4C4C #EECB5A #FFFFFF #EECB5A   #EECB5A
+client.focused          #282828 #EECB5A #FFFFFF #EECB5A   #EECB5A
+client.focused_inactive #282828 #282828 #FFFFFF #282828   #282828
+client.unfocused        #282828 #282828 #888888 #282828   #282828
+client.urgent           #282828 #900000 #FFFFFF #900000   #900000
+client.placeholder      #282828 #EECB5A #FFFFFF #EECB5A   #EECB5A
 
-client.background       #4C4C4C
+client.background       #282828
 
 # [Gaps]
 gaps inner 2
@@ -171,6 +170,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# [Move Window]
 mode "move" {
 	# [Use h,j,k,l]
 	bindsym h move left 20px
@@ -196,7 +196,6 @@ bindsym $mod+Shift+End exec --no-startup-id ~/.local/bin/rofi-power "i3-msg exit
 bindsym $mod+p exec --no-startup-id clipmenu
 bindsym $mod+Shift+p exec --no-startup-id rm -rf /tmp/clipmenu/*
 
-# [Startup]
 # [Polybar]
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # [Background]
@@ -205,4 +204,5 @@ exec_always --no-startup-id feh --bg-fill -Z ~/.background/wallpaper.png
 exec --no-startup-id xbanish
 # [Clipmenu]
 exec --no-startup-id clipmenud
-
+# [Bluetooth Manager]
+#exec --no-startup-id blueman-applet
