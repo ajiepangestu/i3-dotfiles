@@ -8,8 +8,16 @@ Plug 'preservim/nerdtree'
 Plug 'dart-lang/dart-vim-plugin'
 " [Flutter]
 Plug 'thosakwe/vim-flutter'
+" [LSC]
+Plug 'natebosch/vim-lsc'
+" [Dart LSC]
+Plug 'natebosch/vim-lsc-dart'
 " [Gruvbox Theme]
 Plug 'morhetz/gruvbox'
+" [Syntastic]
+Plug 'vim-syntastic/syntastic'
+" [Indent Guides]
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 
@@ -46,4 +54,9 @@ let NERDTreeShowHidden=1
 " [Dart]
 let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
+" [Dart LSC]
+let g:lsc_auto_map = v:true
 " ---------- END OF CONFIGURATION ---------- 
+" [Indent Guides]
+let g:indent_guides_enable_on_vim_startup = 1
+
