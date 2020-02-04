@@ -1,10 +1,9 @@
 ! [urxvt]
 URxvt.scrollBar: false
-URxvt.font: xft:Hack:Bold:size=8
+URxvt.font: xft:Iosevka:Bold:size=10
 
 ! hard contrast: *background: #1d2021
-!*background: #282828
-*background: #4C4C4C
+*background: #282828
 
 ! soft contrast: *background: #32302f
 !*foreground: #ebdbb2
