@@ -90,6 +90,9 @@ export PATH=$PATH:/mnt/data/.apps/nodejs/bin
 # JDK
 export JAVA_HOME=/usr/lib/jvm/default
 
+# Dart SDK
+export PATH=$PATH:/mnt/data/.apps/dart-sdk/bin
+
 # Flutter Enviroment
 export PATH=$PATH:/mnt/data/.apps/flutter/bin
 
