@@ -1,0 +1,26 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'Iosevka'",
+    "editor.fontWeight": "600",
+    "editor.formatOnSave": true,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontWeight": "600",
+    "terminal.integrated.fontFamily": "'Iosevka'",
+    "eslint.alwaysShowStatus": true,
+    "workbench.tree.indent": 16,
+    "advancedNewFile.exclude": {
+        "node_modules": true,
+        "node_modules_electron": true,
+        "dev": true,
+        "dist": true
+    },
+    "advancedNewFile.showInformationMessages": true,
+    "advancedNewFile.convenienceOptions": [
+        "last",
+        "current",
+        "root"
+    ],
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons"
+}
