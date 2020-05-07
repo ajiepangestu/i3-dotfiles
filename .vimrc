@@ -12,19 +12,20 @@ Plug 'thosakwe/vim-flutter'
 Plug 'natebosch/vim-lsc'
 " [Dart LSC]
 Plug 'natebosch/vim-lsc-dart'
-" [Gruvbox Theme]
-Plug 'morhetz/gruvbox'
 " [Syntastic]
 Plug 'vim-syntastic/syntastic'
 " [Indent Guides]
 Plug 'nathanaelkane/vim-indent-guides'
+" [Surround]
+Plug 'tpope/vim-surround'
+" [Repeat]
+Plug 'tpope/vim-repeat'
+" [Polyglot]
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 
 " ---------- VIM CONFIGURATION -------------
-" [Color Scheme]
-colorscheme gruvbox
-set background=dark
 " [Line Number]
 set number
 " [Tab Indent]
@@ -42,8 +43,6 @@ let &t_EI = "\<esc>[2 q"
 
 
 " ---------- PLUGIN CONFIGURATION ---------- 
-" [Gruvbox]
-let g:gruvbox_contrast_dark = 'soft'
 " [Airline] 
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
@@ -60,7 +59,6 @@ let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
 " [Dart LSC]
 let g:lsc_auto_map = v:true
-" ---------- END OF CONFIGURATION ---------- 
 " [Indent Guides]
 let g:indent_guides_enable_on_vim_startup = 1
-
+" ---------- END OF CONFIGURATION ---------- 

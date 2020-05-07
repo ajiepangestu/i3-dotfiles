@@ -1,0 +1,35 @@
+# Editor Environment
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+
+# QT5 Environment
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# Clipmenu Environment
+export CM_LAUNCHER=$HOME/.scripts/clipmenu
+export CM_DIR=/tmp/clipmenu
+
+# Node JS Environment
+export PATH=$PATH:/mnt/data/.apps/nodejs/bin
+
+# JDK
+export JAVA_HOME=/usr/lib/jvm/default
+
+# Dart SDK
+export PATH=$PATH:/mnt/data/.apps/dart-sdk/bin
+
+# Flutter Enviroment
+export PATH=$PATH:/mnt/data/.apps/flutter/bin
+
+# Android Environment
+export ANDROID_HOME=/mnt/data/.apps/android-sdk
+export ANDROID_SDK_HOME=/mnt/data/.apps/android
+export GRADLE_USER_HOME=/mnt/data/.apps/gradle
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Local Environment
+export PATH=$PATH:$HOME/.local/bin
+

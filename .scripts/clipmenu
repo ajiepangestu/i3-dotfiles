@@ -1,0 +1,3 @@
+#!/bin/bash
+rofi -dmenu -p 'Clipboard' -lines 10 -width 500
+

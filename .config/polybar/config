@@ -11,20 +11,24 @@
 ;==========================================================
 
 [colors]
-background = #282828
-background-alt = #EECB5A
-
-foreground = #dfdfdf
-foreground-alt = #555
+background = #000000
+foreground = #ffffff
 
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
-width = 100%
-height = 24
-fixed-center = false
+width = 70%
+height = 32
+fixed-center = true
+offset-x = 15%
+offset-y = 2
+
+;border-size = 10
+;border-color = #FFFFFF
+
+radius = 4.0
 
 ; Background
 background = ${colors.background}
@@ -32,7 +36,7 @@ foreground = ${colors.foreground}
 
 ; Padding
 padding-left = 0
-padding-right = 0
+padding-right = 2
 
 ; Module Margin
 module-margin-left = 1
@@ -40,20 +44,27 @@ module-margin-right = 1
 
 ; Fonts
 font-0 = "SF Pro Display:style=bold:size=10;1"
-font-1 = "Material Icons:size=12;2"
+font-1 = "Material Design Icons:size=12;1"
 font-2 = siji:pixelsize=10;1
 
 ; Modules
-modules-left = i3
+modules-left = menu i3
 modules-center =
-modules-right = xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = xbacklight pulseaudio memory cpu wlan eth battery temperature date usermenu
 
 ; Tray Icon
-tray-position = right
+tray-position = 
 tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+bottom = true
+
+override-redirect = true
+wm-restack = i3
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 ;-------------------------------------------------------------------------
 [module/i3]
 type = internal/i3
@@ -65,23 +76,49 @@ label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-foreground = ${colors.background}
-label-focused-underline= ${colors.background-alt}
+;label-focused = %index%
+label-focused = 󰄯
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.foreground}
 label-focused-padding = 2
 
-label-unfocused = %index%
+;label-unfocused = %index%
+label-unfocused = 󰄰
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.foreground}
 label-unfocused-padding = 2
 
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+;label-visible = %index%
+label-visible = 󰄰
+label-visible-background = ${colors.background}
+label-visible-foreground = ${colors.foreground}
+label-visible-padding = 2
 
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
+;label-urgent = %index%
+label-urgent = 󰄰
+label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 2
+;-------------------------------------------------------------------------
+[module/menu]
+type = custom/text
+content = 󰖳
+content-padding = 2
+content-background = ${colors.background}
+content-foreground = ${colors.foreground}
+click-left = $HOME/.scripts/menu
+click-middle = 
+click-right = 
+;-------------------------------------------------------------------------
+[module/usermenu]
+type = custom/text
+content = 󰀉 Ajie Pangestu
+content-padding = 2
+content-background = ${colors.background}
+content-foreground = ${colors.foreground}
+click-left = $HOME/.scripts/powermenu
+click-middle = 
+click-right = 
 ;-------------------------------------------------------------------------
 [module/xbacklight]
 type = internal/xbacklight
@@ -90,8 +127,8 @@ format = <ramp> <label>
 label = %percentage%%
 label-foreground = ${colors.foreground}
 
-ramp-0 = 
-ramp-1 = 
+ramp-0 = 󰃟
+ramp-1 = 󰃞
 ;-------------------------------------------------------------------------
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -101,14 +138,16 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
+format-prefix = "󰻠"
+format-prefix-padding-right = 1
 format-prefix-foreground = ${colors.foreground}
 label = %percentage:2%%
 ;-------------------------------------------------------------------------
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = ""
+format-prefix = "󰍛"
+format-prefix-padding-right = 1
 format-prefix-foreground = ${colors.foreground}
 label = %percentage_used%%
 ;-------------------------------------------------------------------------
@@ -120,9 +159,9 @@ interval = 3.0
 format-connected = <ramp-signal> <label-connected>
 label-connected = %downspeed%
 
-format-disconnected = Disconnected
+format-disconnected = 󰖪
 
-ramp-signal-0 = 
+ramp-signal-0 = 󰖩
 ramp-signal-foreground = ${colors.foreground}
 ;-------------------------------------------------------------------------
 [module/eth]
@@ -145,7 +184,7 @@ date =
 date-alt = " %Y-%m-%d"
 time = %I:%M %p
 time-alt = %I:%M:%S %p
-format-prefix = 
+format-prefix = 󰅐
 format-prefix-foreground = ${colors.foreground}
 label = %date% %time%
 ;-------------------------------------------------------------------------
@@ -155,16 +194,16 @@ format-volume = <ramp-volume> <label-volume>
 
 label-volume = %percentage%%
 label-volume-foreground = ${colors.foreground}
-label-muted = 
+label-muted = 󰸈
 label-muted-foreground = ${colors.foreground}
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
-ramp-volume-4 = 
-ramp-volume-5 = 
-ramp-volume-6 = 
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀
+ramp-volume-2 = 󰖀
+ramp-volume-3 = 󰕾
+ramp-volume-4 = 󰕾
+ramp-volume-5 = 󰕾
+ramp-volume-6 = 󰕾
 ;-------------------------------------------------------------------------
 [module/battery]
 type = internal/battery
@@ -173,29 +212,23 @@ adapter = AC0
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-discharging = <animation-discharging> <label-discharging>
-format-full-prefix = ""
+format-discharging = <ramp-capacity> <label-discharging>
+format-full-prefix = "󰁹"
 format-full-prefix-foreground = ${colors.foreground}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 󰁺
+ramp-capacity-1 = 󰁼
+ramp-capacity-2 = 󰁾
+ramp-capacity-3 = 󰂀
+ramp-capacity-4 = 󰁹
 ramp-capacity-foreground = ${colors.foreground}
 
-animation-charging-0 = ""
-animation-charging-1 = ""
-animation-charging-2 = ""
-animation-charging-3 = ""
+animation-charging-0 = "󰂆"
+animation-charging-1 = "󰂈"
+animation-charging-2 = "󰂋"
+animation-charging-3 = "󰂅"
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
-
-animation-discharging-0 = ""
-animation-discharging-1 = ""
-animation-discharging-2 = ""
-animation-discharging-foreground = ${colors.foreground}
-animation-discharging-framerate = 750
 ;-------------------------------------------------------------------------
 [module/temperature]
 type = internal/temperature
@@ -209,9 +242,9 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 󰏈
+ramp-1 = 󰏈
+ramp-2 = 󰏈
 ramp-foreground = ${colors.foreground}
 ;-------------------------------------------------------------------------
 [module/powermenu]
@@ -219,28 +252,28 @@ type = custom/menu
 expand-right = true
 
 format-spacing = 1
-format-padding = 4
-format-underline = ${colors.background-alt}
-format-background = ${colors.background-alt}
+format-background = ${colors.background}
 
-label-open = 
-label-open-foreground = ${colors.background}
+label-open = 󰀉 Ajie Pangestu
+label-open-foreground = ${colors.foreground}
 
 label-close = Cancel
-label-close-foreground = ${colors.background}
+label-close-foreground = ${colors.foreground}
 
 label-separator = |
-label-separator-foreground = ${colors.background}
+label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = Reboot
 menu-0-0-exec = reboot
 menu-0-0-foreground = ${colors.background}
+menu-0-0-background = ${colors.foreground}
 menu-0-1 = Power Off
 menu-0-1-exec = poweroff
 menu-0-1-foreground = ${colors.background}
 ;-------------------------------------------------------------------------
 [settings]
 screenchange-reload = true
+pseudo-transparency = true
 ;-------------------------------------------------------------------------
 [global/wm]
 margin-top = 0
