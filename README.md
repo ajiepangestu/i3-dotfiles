@@ -22,7 +22,7 @@ i3 Configuration
 2. [ncpamixer](https://aur.archlinux.org/packages/otf-san-francisco)
 3. [polybar](https://aur.archlinux.org/packages/polybar)
 4. [xbanish](https://aur.archlinux.org/packages/xbanish)
-5. clipmenu
-6. rofi
-
+5. [networkmanager-dmenu](https://aur.archlinux.org/packages/networkmanager-dmenu-git)
+6. clipmenu
+7. rofi
 
