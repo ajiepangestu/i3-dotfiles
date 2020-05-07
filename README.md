@@ -17,4 +17,12 @@ i3 Configuration
     ExecStart=
     ExecStart=-/usr/bin/agetty --autologin username --noclear %I %TERM
     ```
+## Dependencies 
+1. [i3-gaps-rounded](https://aur.archlinux.org/packages/i3-gaps-rounded-git)
+2. [ncpamixer](https://aur.archlinux.org/packages/otf-san-francisco)
+3. [polybar](https://aur.archlinux.org/packages/polybar)
+4. [xbanish](https://aur.archlinux.org/packages/xbanish)
+5. clipmenu
+6. rofi
+
 
