@@ -14,7 +14,7 @@ i3 Configuration
 6. clipmenu
 7. rofi
 
-## Ohter Configurations
+## Other Configurations
 
 - Auto Login TTY
     ```
@@ -24,7 +24,7 @@ i3 Configuration
     ```
     [Service]
     ExecStart=
-    ExecStart=-/usr/bin/agetty --autologin {username| --noclear %I %TERM
+    ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I %TERM
     ```
 
 - Fix Tearing
