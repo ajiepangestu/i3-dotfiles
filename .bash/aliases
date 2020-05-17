@@ -6,7 +6,7 @@ alias lamp-stop='sudo systemctl stop httpd  && sudo systemctl stop mysqld'
 alias reload-database='sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all'
 
 # Pacman
-alias remove-orphan='sudo pacman -Rns $(pacman -Qtdq)'
+alias remove-orphan='sudo pacman -Rcns $(pacman -Qtdq)'
 
 # Systemctl
 alias systemctl-enabled='systemctl list-unit-files | grep enabled'
@@ -14,7 +14,8 @@ alias systemctl-disabled='systemctl list-unit-files | grep disabled'
 
 # Mount Partition
 alias mount-windows='udisksctl mount --block-device /dev/sda3'
-alias mount-data='udisksctl mount --block-device /dev/sda5'
+alias mount-data='udisksctl mount --block-device /dev/sdb1'
+alias mount-data-windows='udisksctl mount --block-device /dev/sda4'
 alias mount-usb='udisksctl mount --block-device /dev/sdc1'
 
 # Directory
@@ -32,5 +33,6 @@ alias androidstudio="sh -c '/mnt/data/.apps/android-studio/bin/studio.sh'"
 
 # System
 alias rm='rm -i'
-alias ls='ls -al'
+alias la='ls -al'
+alias ll='ls -l'
 
