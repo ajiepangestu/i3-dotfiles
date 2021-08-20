@@ -1,11 +1,11 @@
 ! [urxvt]
 URxvt.scrollBar: false
-URxvt.font: xft:Iosevka Heavy:size=10
+URxvt.font: xft:Iosevka:size=14
 
 ! Base16 Monokai
 ! Scheme: Wimer Hazenberg (http://www.monokai.nl)
 
-#define base00 #000000
+#define base00 #1E1F29
 #define base01 #383830
 #define base02 #49483e
 #define base03 #75715e
