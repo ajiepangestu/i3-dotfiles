@@ -15,6 +15,8 @@ i3 Configuration
 5. [networkmanager-dmenu](https://aur.archlinux.org/packages/networkmanager-dmenu-git)
 6. clipmenu
 7. rofi
+8. [Nerd Font Iosevka](https://aur.archlinux.org/packages/nerd-fonts-iosevka)
+9. [San Francisco Font](https://aur.archlinux.org/packages/otf-san-francisco)
 
 ## Other Configurations
 
