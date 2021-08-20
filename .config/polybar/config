@@ -11,7 +11,7 @@
 ;==========================================================
 
 [colors]
-background = #000000
+background = #aa000000
 foreground = #ffffff
 
 primary = #ffb52a
@@ -19,38 +19,39 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
-width = 70%
-height = 32
+width = 100%
+height = 44
 fixed-center = true
-offset-x = 15%
-offset-y = 2
+;offset-x = 1
+;offset-y = 2
 
-;border-size = 10
-;border-color = #FFFFFF
+radius = 8.0
 
-radius = 4.0
+border-size = 2
+border-color = #00000000
 
 ; Background
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 ; Padding
-padding-left = 0
-padding-right = 2
+padding-left = 4
+padding-right = 4
 
 ; Module Margin
 module-margin-left = 1
 module-margin-right = 1
 
 ; Fonts
-font-0 = "SF Pro Display:style=bold:size=10;1"
+font-0 = "SF Pro Display:style=bold:size=12;1"
 font-1 = "Material Design Icons:size=12;1"
-font-2 = siji:pixelsize=10;1
+font-2 = "siji:pixelsize=12;1"
+font-3 = "Iosevka:size=12;1"
 
 ; Modules
 modules-left = menu i3
 modules-center =
-modules-right = xbacklight pulseaudio memory cpu wlan eth battery temperature date usermenu
+modules-right = xbacklight pulseaudio memory cpu wlan battery temperature date usermenu
 
 ; Tray Icon
 tray-position = 
@@ -113,7 +114,7 @@ click-right =
 [module/usermenu]
 type = custom/text
 content = 󰀉 Ajie Pangestu
-content-padding = 2
+content-padding = 0
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
 click-left = $HOME/.scripts/powermenu
@@ -153,7 +154,7 @@ label = %percentage_used%%
 ;-------------------------------------------------------------------------
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlp0s20f3
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -194,7 +195,7 @@ format-volume = <ramp-volume> <label-volume>
 
 label-volume = %percentage%%
 label-volume-foreground = ${colors.foreground}
-label-muted = 󰸈
+label-muted = 󰸈 Muted
 label-muted-foreground = ${colors.foreground}
 
 ramp-volume-0 = 󰕿
