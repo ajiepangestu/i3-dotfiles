@@ -1,5 +1,5 @@
 # Editor Environment
-export VISUAL="vim"
+export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
 # QT5 Environment
@@ -10,21 +10,26 @@ export CM_LAUNCHER=$HOME/.scripts/clipmenu
 export CM_DIR=/tmp/clipmenu
 
 # Node JS Environment
-export PATH=$PATH:/mnt/data/.apps/nodejs/bin
+export PATH=$PATH:$HOME/.env/node/bin
 
 # JDK
 export JAVA_HOME=/usr/lib/jvm/default
 
-# Dart SDK
-export PATH=$PATH:/mnt/data/.apps/dart-sdk/bin
+# GO Enviroment
+export PATH=$PATH:$HOME/.env/go/bin
+export PATH=$PATH:$HOME/.doc/go/bin
+export GOPATH=$HOME/.doc/go
+
+# Dart Enviroment
+export PATH=$PATH:$HOME/.env/flutter/bin/cache/dart-sdk/bin
 
 # Flutter Enviroment
-export PATH=$PATH:/mnt/data/.apps/flutter/bin
+export PATH=$PATH:$HOME/.env/flutter/bin
 
 # Android Environment
-export ANDROID_HOME=/mnt/data/.apps/android-sdk
-export ANDROID_SDK_HOME=/mnt/data/.apps/android
-export GRADLE_USER_HOME=/mnt/data/.apps/gradle
+export ANDROID_HOME=$HOME/.env/android-sdk
+export ANDROID_SDK_HOME=$ANDROID_HOME/android-sdk-home
+export GRADLE_USER_HOME=$ANDROID_HOME/gradle
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
