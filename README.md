@@ -1,11 +1,13 @@
 # i3-dotfiles
+
 i3 Configuration
 
 ## Preview
 
 ![alt text](https://raw.githubusercontent.com/ajiepangestu/i3-dotfiles/master/preview.png)
 
-## Dependencies 
+## Dependencies
+
 1. [i3-gaps-rounded](https://aur.archlinux.org/packages/i3-gaps-rounded-git)
 2. [ncpamixer](https://aur.archlinux.org/packages/otf-san-francisco)
 3. [polybar](https://aur.archlinux.org/packages/polybar)
@@ -17,47 +19,58 @@ i3 Configuration
 ## Other Configurations
 
 - Auto Login TTY
-    ```
-    sudo systemctl edit getty@tty1
-    ```
 
-    ```
-    [Service]
-    ExecStart=
-    ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I %TERM
-    ```
+```bash
+sudo systemctl edit getty@tty1
+ ```
+
+ ```bash
+ [Service]
+ ExecStart=
+ ExecStart=-/usr/bin/agetty --autologin {username} --noclear %I %TERM
+ ```
 
 - Fix Tearing
-    ```
-    sudo vim /etc/X11/xorg.conf.d/20-intel.conf
-    ```
 
-    ```
-    Section "Device"
-        Identifier "Intel Graphics"
-        Driver "intel"
+```bash
+sudo nvim /etc/X11/xorg.conf.d/20-intel.conf
+ ```
 
-        Option "TearFree" "true"
-    EndSection
-    ```
+ ```bash
+ Section "Device"
+   Identifier "Intel Graphics"
+   Driver "intel"
+   Option "TearFree" "true"
+ EndSection
+ ```
+
 - Tap to Click & Two Finger Scroll
-    ```
-    sudo vim /etc/X11/xorg.conf.d/90-touchpad.conf
-    ```
 
-    ```
-    Section "InputClass"
-        Identifier "touchpad"
-        MatchIsTouchpad "on"
-        Driver "libinput"
-        Option "Tapping" "on"
-        Option "TappingButtonMap" "lrm"
-        Option "NaturalScrolling" "on"
-        Option "ScrollMethod" "twofinger"
-    EndSection
+```bash
+ sudo nvim /etc/X11/xorg.conf.d/90-touchpad.conf
+ ```
 
-    ```
+ ```bash
+ Section "InputClass"
+   Identifier "touchpad"
+   MatchIsTouchpad "on"
+   Driver "libinput"
+   Option "Tapping" "on"
+   Option "TappingButtonMap" "lrm"
+   Option "NaturalScrolling" "on"
+   Option "ScrollMethod" "twofinger"
+ EndSection
+ ```
 
+- Fix Dummy Sound Output on Swift 3
+  required : **alsa-ucm-conf** & **sof-firmware**
 
+```bash
+sudo nvim /etc/modprobe.d/sound.conf
+```
 
+```bash
+options snd-hda-intel model=dell-headset-multi
+options snd-hda-intel power_save=1
+```
 
