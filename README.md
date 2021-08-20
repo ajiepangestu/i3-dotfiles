@@ -77,3 +77,9 @@ options snd-hda-intel model=dell-headset-multi
 options snd-hda-intel power_save=1
 ```
 
+- ESLINT NeoVIM
+
+```bash
+:CocCommand eslint.showOutputChannel
+```
+
