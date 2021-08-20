@@ -17,6 +17,7 @@ i3 Configuration
 7. rofi
 8. [Nerd Font Iosevka](https://aur.archlinux.org/packages/nerd-fonts-iosevka)
 9. [San Francisco Font](https://aur.archlinux.org/packages/otf-san-francisco)
+10. [Material Design Icon](https://aur.archlinux.org/packages/ttf-material-design-icons-git)
 
 ## Other Configurations
 
