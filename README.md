@@ -77,6 +77,10 @@ options snd-hda-intel model=dell-headset-multi
 options snd-hda-intel power_save=1
 ```
 
+```bash
+amixer
+```
+
 - ESLINT NeoVIM
 
 ```bash
