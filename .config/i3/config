@@ -3,7 +3,8 @@ set $mod Mod4
 # [Window]
 for_window [class=".*"] border pixel 0
 # [Floating Window]
-for_window [title="Android Emulator*"] floating enable
+for_window [title="Android Emulator - Android_Q_API_29:5554"] floating enable border none
+for_window [title="Mechvibes"] floating enable
 # [Gaps]
 gaps inner 2
 gaps bottom 46
@@ -14,8 +15,8 @@ font pango:SF Pro Display 14
 # [Lockscreen]
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # [Audio]
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # [Brightness]
@@ -156,4 +157,4 @@ exec_always --no-startup-id feh --bg-fill -Z ~/.wallpaper.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xbanish
 exec --no-startup-id clipmenud
-
+exec --no-startup-id mechvibes
