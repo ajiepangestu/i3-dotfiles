@@ -20,6 +20,40 @@ i3 Configuration
 10. [San Francisco Font](https://aur.archlinux.org/packages/otf-san-francisco)
 11. [Material Design Icon](https://aur.archlinux.org/packages/ttf-material-design-icons-git)
 
+## Dotfiles Structure
+
+```bash
+.
+├── .bash
+│   ├── aliases
+│   ├── environments
+│   └── extractor
+├── .bash_profile
+├── .bashrc
+├── .config
+│   ├── gtk-3.0
+│   │   └── settings.ini
+│   ├── i3
+│   │   └── config
+│   ├── neofetch
+│   │   └── config.conf
+│   ├── networkmanager-dmenu
+│   │   └── config.ini
+│   ├── polybar
+│   │   ├── config
+│   │   └── launch.sh
+│   └── rofi-power
+│       └── config
+├── .gtkrc-2.0
+├── .scripts
+│   ├── clipmenu
+│   ├── menu
+│   └── powermenu
+├── .wallpaper.jpg
+├── .xinitrc
+└── .Xresources
+```
+
 ## Other Configurations
 
 - Auto Login TTY
