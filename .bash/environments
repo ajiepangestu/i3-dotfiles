@@ -35,6 +35,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# Laravel
+export PATH=$PATH:$HOME/.composer/vendor/bin
+
 # Local Environment
 export PATH=$PATH:$HOME/.local/bin
 
